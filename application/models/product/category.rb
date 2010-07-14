@@ -5,7 +5,7 @@ module Picombo
 			storage_names[:default] = 'product_categories'
 
 			property :id,   Serial
-			property :name, String, :size => 50
+			property :name, String, :length => 50
 
 			has n, :products, :model => 'Picombo::Models::Product'
 		end
