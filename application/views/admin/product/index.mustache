@@ -1,0 +1,9 @@
+<h2>All Products</h2>
+<ul>
+	{{#products}}<li>
+		<h3>{{name}}</h3>
+		<h4>{{price}}</h4>
+		<p>{{description}}</p>
+		<p><a href="admin/product/edit?id={{id}}">Edit</a></p>
+	</li>{{/products}}
+</ul>

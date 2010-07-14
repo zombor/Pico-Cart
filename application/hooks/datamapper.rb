@@ -1,5 +1,5 @@
 require 'dm-core'
-puts 'SETTING UP DM'
+
 DataMapper.setup(:default,
                  {:host => Picombo::Config.get('datamapper.default.host'),
                   :adapter => Picombo::Config.get('datamapper.default.driver'),
