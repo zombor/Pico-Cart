@@ -1,6 +1,6 @@
 module Picombo
 	module Controllers
-		class Admin_products < Picombo::Controllers::Template
+		class Admin_product < Picombo::Controllers::Template
 			def initialize
 				super
 			end
