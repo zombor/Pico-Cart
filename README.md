@@ -11,32 +11,32 @@ Items to implement
 ---
 
 1. Categories
- - Name
- - Order
- - Sub-categories (?)
+   - Name
+   - Order
+   - Sub-categories (?)
 2. Products
- - Name
- - Order
- - Price (Multiple?)
- - Description
- - Category
+   - Name
+   - Order
+   - Price (Multiple?)
+   - Description
+   - Category
 3. Cart Object
- - Add items
- - Remove items
- - Change quantity
+   - Add items
+   - Remove items
+   - Change quantity
 4. Order Object
- - Object-oriented, Self-processing payments
- - Uses cart object to process an order
- - Applies proper tax
+   - Object-oriented, Self-processing payments
+   - Uses cart object to process an order
+   - Applies proper tax
 5. Users
- - Roles
- - Order History
+   - Roles
+   - Order History
 6. Admin
- - Categories
- - Products
- - Order History
- - Users
- - Payment Processor Setup
+   - Categories
+   - Products
+   - Order History
+   - Users
+   - Payment Processor Setup
 7. Themes
 
 Gems You'll Need
