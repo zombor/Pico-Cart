@@ -1,6 +1,7 @@
-<h2>Edit Product #{{id}}</h2>
+{{#product}}<h2>Edit Product #{{id}}</h2>
+<form action="admin/products/edit?id={{id}}" method="post">
+	{{#status_message}}<p class="status {{type}}">{{message}}</p>{{/status_message}}
 <ul>
-	{{#product}}
 	<li>
 		<label for="name">Name</label>
 		<input name="name" id="name" value="{{name}}" />
@@ -16,11 +17,10 @@
 	<li>
 		<label for="product_category_id">Product Category</label>
 		<select name="product_category_id" id="product_category_id">
-			{{#product_categories}}<option value="{{id}}"{{#selected?}} selected="selected"{{/selected?}}>{{name}}</option>
+			{{#product_categories}}<option value="{{id}}" {{#selected?}}selected="selected"{{/selected?}}>{{name}}</option>
 			{{/product_categories}}
 		</select>
 	<li>
 		<input type="submit" value="Submit Changes">
 	</li>
-	{{/product}}
-</ul>
+</ul>{{/product}}
