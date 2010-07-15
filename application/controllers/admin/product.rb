@@ -12,8 +12,7 @@ module Picombo
 			def edit
 				id = Picombo::Input.instance.get('id')
 
-				body = Picombo::Stache::Admin_Product_Edit.new
-				body.id = id
+				body = Picombo::Stache::Admin_Product_Edit.new(id)
 
 				if Picombo::Input.instance.post.length > 0
 					post = Picombo::Input.instance.post
@@ -25,7 +24,6 @@ module Picombo
 					product.save
 					body.status_message = 'You have updated the product'
 				end
-				
 
 				@template[:body] = body.render
 			end

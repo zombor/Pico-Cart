@@ -6,7 +6,7 @@ module Picombo
 			@id = nil
 			@status_message = nil
 
-			def id=(id)
+			def initialize(id)
 				@id = id
 			end
 
