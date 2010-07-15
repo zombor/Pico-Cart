@@ -5,8 +5,17 @@ module Picombo
 				super
 			end
 
-			def index()
+			def index
 				@template[:body] = Picombo::Stache::Admin_Product_Index.render
+			end
+
+			def edit
+				id = Picombo::Input.instance.get('id')
+
+				body = Picombo::Stache::Admin_Product_Index.render
+				body.id = id
+
+				@template[:body] = body.render
 			end
 		end
 	end

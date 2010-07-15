@@ -1,0 +1,26 @@
+<h2>Edit Product #{{id}}</h2>
+<ul>
+	{{#product}}
+	<li>
+		<label for="name">Name</label>
+		<input name="name" id="name" value="{{name}}" />
+	</li>
+	<li>
+		<label for="price">Price</label>
+		<input name="price" id="price" value="{{price}}" />
+	</li>
+	<li>
+		<label for="description">Description</label>
+		<textarea name="description" id="description">{{description}}</textarea>
+	</li>
+	<li>
+		<label for="product_category_id">Product Category</label>
+		<select name="product_category_id" id="product_category_id">
+			{{#product_categories}}<option value="{{id}}"{{#selected?}} selected="selected"{{/selected?}}>{{name}}</option>
+			{{/product_categories}}
+		</select>
+	<li>
+		<input type="submit" value="Submit Changes">
+	</li>
+	{{/product}}
+</ul>
