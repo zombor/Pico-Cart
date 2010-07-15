@@ -1,6 +1,7 @@
 module Picombo
 	module Stache
 		class Admin_Product_Edit < Mustache
+			include Picombo::Baseview
 			self.template = File.open(Picombo::Core.find_file('views', 'admin/product/edit', true, 'mustache').shift).read
 
 			@id = nil
