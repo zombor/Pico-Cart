@@ -5,21 +5,9 @@ module Picombo
 			self.template = File.open(Picombo::Core.find_file('views', 'admin/product/edit', true, 'mustache').shift).read
 
 			@id = nil
-			@status_message = nil
 
 			def initialize(id)
 				@id = id
-			end
-
-			def status_message=(message)
-				@status_message = message
-			end
-
-			def status_message
-				{
-					:message => @status_message,
-					:type => 'good'
-				}
 			end
 
 			def product
