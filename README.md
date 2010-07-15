@@ -39,6 +39,14 @@ Items to implement
  - Payment Processor Setup
 7. Themes
 
+Gems You'll Need
+---
+
+1. picombo
+2. picombo-auth
+3. dm-core
+4. dm-migrations
+
 Installing The Database
 ---
 
