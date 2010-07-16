@@ -33,3 +33,23 @@ DataMapper::MigrationRunner.migration 1, :create_initial_schema do
 		drop_table :product_categories
 	end
 end
+
+DataMapper::MigrationRunner.migration 2, :add_order_to_products_and_categories do
+	up do
+		modify_table :products do
+			add_column :order, Integer
+		end
+		modify_table :product_categories do
+			add_column :order, Integer
+		end
+	end
+
+	down do
+		modify_table :products do
+			drop_column :order
+		end
+		modify_table :product_categories do
+			drop_column :order
+		end
+	end
+end
