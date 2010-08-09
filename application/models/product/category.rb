@@ -4,8 +4,9 @@ module Picombo
 			include DataMapper::Resource
 			storage_names[:default] = 'product_categories'
 
-			property :id,   Serial
-			property :name, String, :length => 50
+			property :id,    Serial
+			property :name,  String, :length => 50
+			property :order, Integer
 
 			has n, :products, :model => 'Picombo::Models::Product'
 		end
