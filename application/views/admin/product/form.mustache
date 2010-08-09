@@ -1,6 +1,6 @@
 {{#product}}<h2>Edit Product #{{id}}</h2>
-<form action="admin/product/edit?id={{id}}" method="post">
-	{{#status_message}}<p class="status {{type}}">{{message}}</p>{{/status_message}}
+<form method="post">
+{{#status_message}}<p class="status {{type}}">{{message}}</p>{{/status_message}}
 <ul>
 	<li>
 		<label for="name">Name</label>

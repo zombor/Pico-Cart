@@ -1,17 +1,18 @@
 module Picombo
 	module Stache
-		class Admin_Product_Edit < Mustache
+		class Admin_Product_Form < Mustache
 			include Picombo::Baseview
-			self.template = File.open(Picombo::Core.find_file('views', 'admin/product/edit', true, 'mustache').shift).read
+			self.template = File.open(Picombo::Core.find_file('views', 'admin/product/form', true, 'mustache').shift).read
 
 			@id = nil
 
-			def initialize(id)
+			def initialize(id = nil)
 				@id = id
 			end
 
 			def product
-				Picombo::Models::Product.first(:id => @id)
+				product = Picombo::Models::Product.first(:id => @id)
+				return product.nil? ? Picombo::Models::Product.new : product
 			end
 
 			def product_categories

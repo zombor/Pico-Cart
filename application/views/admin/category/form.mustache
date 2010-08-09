@@ -1,0 +1,16 @@
+<h2>{{#category}}Edit Category #{{id}}{{/category}}{{^category}}Create New Category{{/category}}</h2>
+<form method="post">
+{{#status_message}}<p class="status {{type}}">{{message}}</p>{{/status_message}}
+<ul>
+	<li>
+		<label for="name">Name</label>
+		<input name="name" id="name" value="{{#category}}{{name}}{{/category}}" />
+	</li>
+	<li>
+		<label for="order">Order</label>
+		<input name="order" id="order" value="{{#category}}{{order}}{{/category}}" />
+	</li>
+	<li>
+		<input type="submit" value="Submit Changes">
+	</li>
+</ul>
