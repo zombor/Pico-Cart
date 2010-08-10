@@ -1,2 +1,12 @@
 <h3>This is pico-cart!</h3>
-<p>You have {{total_items}} in your shopping cart.</p>
+<p>You have {{total_items}} things in your shopping cart.</p>
+<h4>Here's some products for your enjoyment:</h4>
+<ul>
+	{{#products}}<li>
+		<h5>{{name}}</h5>
+		<p>${{price}}</p>
+		<p>Category: {{#product_category}}{{name}}{{/product_category}}
+		<p>{{description}}</p>
+		<p><a href="cart/add?id={{id}}">Add To Cart</a></p>
+	</li>{{/products}}
+</ul>

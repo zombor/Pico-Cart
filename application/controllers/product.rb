@@ -5,7 +5,7 @@ module Picombo
 				super
 			end
 
-			def index()
+			def index
 				@template[:body] = Picombo::Stache::Product_Index.render
 			end
 		end

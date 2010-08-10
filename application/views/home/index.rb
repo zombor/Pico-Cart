@@ -4,6 +4,10 @@ module Picombo
 			include Picombo::Baseview
 			self.template = File.open(Picombo::Core.find_file('views', 'home/index', true, 'mustache').shift).read
 
+			def products
+				Picombo::Models::Product.all
+			end
+
 			def total_items
 				Picombo::Models::Shopping_Cart.instance.total_items
 			end

@@ -4,8 +4,7 @@ module Picombo
 			include Singleton
 
 			def initialize
-				@items = Picombo::Session.instance.get('cart')
-				@items = {} if @items.nil?
+				@items = Picombo::Session.instance.get('cart', {})
 			end
 
 			def items
@@ -26,14 +25,20 @@ module Picombo
 			end
 
 			def total_items
-				@items.count
+				total = 0
+
+				@items.each do |index, item|
+					total+=item[:quantity]
+				end
+
+				total
 			end
 
 			def total_price
 				total = 0
 
 				@items.each do |item|
-					total+=item.price
+					total+=item[:product].price
 				end
 
 				total
