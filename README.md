@@ -11,15 +11,15 @@ Items to implement
 ---
 
 1. Categories
-   - Name
-   - Order
-   - Sub-categories (?)
+   - -Name-
+   - -Order-
+   - Sub-categories (? [MPTT?])
 2. Products
-   - Name
-   - Order
-   - Price (Multiple?)
-   - Description
-   - Category
+   - -Name-
+   - -Order-
+   - -Price- (Multiple?)
+   - -Description-
+   - -Category-
 3. Cart Object
    - Add items
    - Remove items
