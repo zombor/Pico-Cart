@@ -5,6 +5,10 @@ module Picombo
 				super
 			end
 
+			def index
+				@template[:body] = Picombo::Stache::Cart_Index.render
+			end
+
 			def add
 				id = Picombo::Input.instance.get('id')
 
@@ -14,7 +18,13 @@ module Picombo
 				raise Picombo::E404 if product.nil?
 
 				Picombo::Models::Shopping_Cart.instance.add_item(product, 1)
-				Picombo::Core.redirect('home')
+				Picombo::Core.redirect('cart/index')
+			end
+
+			def empty
+				Picombo::Models::Shopping_Cart.instance.empty!
+
+				Picombo::Core.redirect('cart/index')
 			end
 		end
 	end

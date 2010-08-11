@@ -8,17 +8,25 @@ module Picombo
 			end
 
 			def items
-				@items
+				items = []
+
+				@items.each do |index, item|
+					items << item
+				end
+
+				items
 			end
 
 			def add_item(product, quantity)
 				if @items[product.id].nil?
 					@items[product.id] = {
 						:quantity => quantity,
-						:product => product
+						:product => product,
+						:total_price => quantity*product.price
 					}
 				elsif
 					@items[product.id][:quantity]+=quantity
+					@items[product.id][:total_price]=@items[product.id][:quantity]*product.price
 				end
 
 				Picombo::Session.instance.set('cart', @items)
@@ -37,14 +45,14 @@ module Picombo
 			def total_price
 				total = 0
 
-				@items.each do |item|
-					total+=item[:product].price
+				@items.each do |index, item|
+					total+=item[:quantity]*item[:product].price
 				end
 
 				total
 			end
 
-			def clear!
+			def empty!
 				@items = {}
 				Picombo::Session.instance.set('cart', @items)
 			end
